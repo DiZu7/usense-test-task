@@ -1,4 +1,4 @@
-# SENSE test task
+# USENSE test task
 
 ## Password strength checker
 
