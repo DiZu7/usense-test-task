@@ -2,7 +2,7 @@
 
 ## Password strength checker
 
-### [Site link](https://dizu7.github.io/usense-test-task/)
+### [Site link](https://earnest-druid-26867a.netlify.app)
 
 ### The tech stack is:
 
