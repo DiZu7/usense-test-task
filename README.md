@@ -13,6 +13,7 @@
 - [BEM methodology](https://en.bem.info/methodology/)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [React](https://reactjs.org/)
+- [TypeScript] (https://www.typescriptlang.org/)
 - [Webpack](https://webpack.js.org/)
 - [Babel](https://babeljs.io/)
 - [ESlint](https://eslint.org/)

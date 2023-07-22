@@ -1,6 +1,11 @@
 import React from 'react';
 
-const ProgressBar = ({ progress, color }) => {
+interface ProgressBarProps {
+  progress: string;
+  color: string;
+}
+
+const ProgressBar: React.FC<ProgressBarProps> = ({ progress, color }) => {
   return (
     <div className="password-checker__progress-bar">
       <div
