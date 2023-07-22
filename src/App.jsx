@@ -44,7 +44,7 @@ const App = () => {
   };
 
   // password checker function solution 2
-  
+
   // const lettersRegex = /[A-Za-z]/;
   // const numbersRegex = /\d/;
   // const symbolsRegex = /\W/;
@@ -75,7 +75,7 @@ const App = () => {
   //   return complexity;
   // };
 
-  const config = {
+  const passwordValidationConfig = {
     0: { text: 'field is empty', progress: 0, color: '#d3d3d3' },
     1: { text: 'password has less than 8 characters', progress: '100%', color: '#f00' },
     2: { text: 'Your password is easy', progress: '33%', color: '#f00' },
@@ -96,10 +96,12 @@ const App = () => {
         value={password}
       />
       <ProgressBar
-        progress={config[passwordComplexity].progress}
-        color={config[passwordComplexity].color}
+        progress={passwordValidationConfig[passwordComplexity].progress}
+        color={passwordValidationConfig[passwordComplexity].color}
       />
-      <span className="password-checker__desc">{config[passwordComplexity].text}</span>
+      <span className="password-checker__desc">
+        {passwordValidationConfig[passwordComplexity].text}
+      </span>
     </div>
   );
 };
