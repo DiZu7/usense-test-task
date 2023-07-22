@@ -17,35 +17,60 @@ import ProgressBar from './ProgressBar';
 const App = () => {
   const [password, setPassword] = useState('');
 
-  const lettersRegex = /[A-Za-z]/;
-  const numbersRegex = /\d/;
-  const symbolsRegex = /\W/;
+  const passwordPatterns = {
+    lettersPattern: /[A-Za-z]/,
+    numbersPattern: /\d/,
+    symbolsPattern: /\W/,
+  };
+
+  const minPasswordLength = 8;
 
   const checkPasswordComplexity = password => {
-    let complexity = 1;
-
     if (password.length === 0) {
       return 0;
     }
 
-    if (password.length < 8) {
+    if (password.length < minPasswordLength) {
+      return 1;
+    }
+
+    return Object.values(passwordPatterns).reduce((complexity, patternValue) => {
+      if (patternValue.test(password)) {
+        complexity++;
+      }
       return complexity;
-    }
-
-    if (lettersRegex.test(password)) {
-      complexity++;
-    }
-
-    if (numbersRegex.test(password)) {
-      complexity++;
-    }
-
-    if (symbolsRegex.test(password)) {
-      complexity++;
-    }
-
-    return complexity;
+    }, 1);
   };
+
+  // const lettersRegex = /[A-Za-z]/;
+  // const numbersRegex = /\d/;
+  // const symbolsRegex = /\W/;
+
+  // const checkPasswordComplexity = password => {
+  //   let complexity = 1;
+
+  //   if (password.length === 0) {
+  //     return 0;
+  //   }
+
+  //   if (password.length < 8) {
+  //     return complexity;
+  //   }
+
+  //   if (lettersRegex.test(password)) {
+  //     complexity++;
+  //   }
+
+  //   if (numbersRegex.test(password)) {
+  //     complexity++;
+  //   }
+
+  //   if (symbolsRegex.test(password)) {
+  //     complexity++;
+  //   }
+
+  //   return complexity;
+  // };
 
   const config = {
     0: { text: 'field is empty', progress: 0, color: '#d3d3d3' },
