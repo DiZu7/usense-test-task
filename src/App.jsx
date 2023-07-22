@@ -17,6 +17,7 @@ import ProgressBar from './ProgressBar';
 const App = () => {
   const [password, setPassword] = useState('');
 
+  // password checker function solution 1
   const passwordPatterns = {
     lettersPattern: /[A-Za-z]/,
     numbersPattern: /\d/,
@@ -42,6 +43,8 @@ const App = () => {
     }, 1);
   };
 
+  // password checker function solution 2
+  
   // const lettersRegex = /[A-Za-z]/;
   // const numbersRegex = /\d/;
   // const symbolsRegex = /\W/;
